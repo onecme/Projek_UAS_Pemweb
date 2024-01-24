@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Registrasi - Sistem Informasi Tugas Akhir</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/fontawesome-free/css/all.min.css"
+    />
+    <!-- icheck bootstrap -->
+    <link
+      rel="stylesheet"
+      href="assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css"
+    />
+    <!-- Theme style -->
+    <link rel="stylesheet" href="assets/css/adminlte.min.css" />
+
+    <style>
+      #efekMengetik {
+        font-size: 40px;
+        text-align: center;
+        margin-bottom: 20px;
+        font-weight: 700;
+      }
+      /* Add space between search input and Full name input */
+      #fullNameWrapper {
+        margin-top: 20px; /* Adjust the margin as needed */
+      }
+      #dropdownList {
+        display: none;
+        border: 1px solid #ccc;
+        margin-top: 5px;
+        background-color: #fff;
+        list-style-type: none;
+        padding: 0;
+      }
+
+      #dropdownList li {
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      #searchResult {
+        margin-top: 10px; /* Adjust the margin as needed */
+        margin-bottom: 15px; /* Adjust the margin as needed */
+        font-weight: bold;
+      }
+      .container {
+        max-width: 800px; /* Adjust as needed */
+        margin: auto;
+      }
+
+      #dropdownListContainer {
+        position: relative;
+      }
+
+      #dropdownList {
+        max-height: 60px; /* Adjust as needed */
+        overflow-y: auto;
+      }
+    </style>
+  </head>
+
+  <body class="hold-transition register-page">
+    <div id="efekMengetik"></div>
+
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-md-6">
+          <div class="register-box">
+            <div class="register-logo">
+              <a href="#"><b>Registrasi User</b></a>
+            </div>
+
+            <div class="card">
+              <div class="card-body register-card-body">
+                <p class="login-box-msg">Register a new membership</p>
+
+                <form action="1_login.html" id="form">
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="searchInput"
+                      placeholder="Search by Name"
+                      oninput="searchByName()"
+                    />
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-search"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="dropdownListContainer">
+                    <ul id="dropdownList"></ul>
+                    <div id="searchResult"></div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Username"
+                    />
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-user"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Password"
+                    />
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-group mb-3">
+                    <input
+                      type="password"
+                      class="form-control"
+                      placeholder="Retype password"
+                    />
+                    <div class="input-group-append">
+                      <div class="input-group-text">
+                        <span class="fas fa-lock"></span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-8">
+                      <div class="icheck-primary">
+                        <input
+                          type="checkbox"
+                          id="agreeTerms"
+                          name="terms"
+                          value="agree"
+                        />
+                        <label for="agreeTerms">
+                          I agree to the <a href="#">terms</a>
+                        </label>
+                      </div>
+                    </div>
+                    <!-- /.col -->
+                    <div class="col-4">
+                      <button type="submit" class="btn btn-primary btn-block">
+                        Register
+                      </button>
+                    </div>
+                    <!-- /.col -->
+                  </div>
+                </form>
+
+                <a href="1_login.html" class="text-center"
+                  >I already have a membership</a
+                >
+              </div>
+              <!-- /.form-box -->
+            </div>
+            <!-- /.card -->
+          </div>
+          <!-- /.register-box -->
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let i = 0,
+        text;
+      text = "Selamat Datang di Sistem Informasi Tugas Akhir";
+      function efekKetik() {
+        if (i < text.length) {
+          document.getElementById("efekMengetik").innerHTML += text.charAt(i);
+          i++;
+          setTimeout(efekKetik, 200);
+        }
+      }
+      efekKetik();
+      function daftar(event) {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        let namaLengkap = document
+          .getElementById("searchResult")
+          .querySelector("div:nth-child(1)")
+          .textContent.replace("Nama : ", "")
+          .trim();
+        let prodi = document
+          .getElementById("searchResult")
+          .querySelector("div:nth-child(2)")
+          .textContent.replace("Prodi : ", "")
+          .trim();
+        let username = document.getElementById("username").value;
+        let password = document.getElementById("password").value;
+        let cekPassword = document.getElementById("cekPassword").value;
+
+        if (
+          namaLengkap.length < 30 &&
+          prodi.length < 30 &&
+          username.length < 30 &&
+          password.length < 15 &&
+          password == cekPassword
+        ) {
+          alert("Berhasil Terdaftar");
+          window.location.href = "1_login.html";
+        } else {
+          alert("Tidak Berhasil Terdaftar! Coba lagi");
+        }
+      }
+    </script>
+    <script type="module">
+      // app.js
+
+      import { data } from "./assets/data/data.mjs";
+
+      function searchByName() {
+        const searchInput = document
+          .getElementById("searchInput")
+          .value.toLowerCase();
+        const dropdownList = document.getElementById("dropdownList");
+        const searchResult = document.getElementById("searchResult");
+
+        dropdownList.innerHTML = "";
+
+        if (searchInput.trim() === "") {
+          dropdownList.style.display = "none";
+          searchResult.textContent = ""; // Menghapus hasil pencarian sebelumnya
+          return;
+        }
+
+        const filteredData = data.filter((item) =>
+          item.nama.toLowerCase().includes(searchInput)
+        );
+
+        if (filteredData.length === 0) {
+          dropdownList.style.display = "none";
+          searchResult.textContent = "No matching results found.";
+        } else {
+          filteredData.forEach((item) => {
+            const listItem = document.createElement("li");
+            listItem.textContent = item.nama;
+            listItem.setAttribute("data-prodi", item.prodi);
+            listItem.addEventListener("click", selectItem);
+            dropdownList.appendChild(listItem);
+          });
+          dropdownList.style.display = "block";
+          searchResult.textContent = ""; // Menghapus hasil pencarian sebelumnya
+        }
+      }
+
+      function selectItem(event) {
+        const selectedName = event.target.textContent;
+        const selectedProdi = event.target.getAttribute("data-prodi");
+        const searchResult = document.getElementById("searchResult");
+
+        // Buat elemen untuk nama dan prodi
+        const nameElement = document.createElement("div");
+        const prodiElement = document.createElement("div");
+
+        // Atur teks untuk elemen-elemen tersebut
+        nameElement.textContent = `Nama : ${selectedName}`;
+        prodiElement.textContent = `Prodi : ${selectedProdi}`;
+
+        // Bersihkan konten sebelumnya
+        searchResult.innerHTML = "";
+
+        // Tambahkan elemen-elemen ke dalam searchResult
+        searchResult.appendChild(nameElement);
+        searchResult.appendChild(prodiElement);
+
+        document.getElementById("searchInput").value = "";
+        document.getElementById("dropdownList").style.display = "none";
+
+        // Tambahkan gaya CSS untuk membuat teks tidak tebal
+        nameElement.style.fontWeight = "normal";
+        prodiElement.style.fontWeight = "normal";
+      }
+
+      window.searchByName = searchByName;
+    </script>
+    <!-- jQuery -->
+    <script src="assets/plugins/jquery/jquery.min.js"></script>
+    <!-- Bootstrap 4 -->
+    <script src="assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- AdminLTE App -->
+    <script src="assets/dist/js/adminlte.min.js"></script>
+  </body>
+</html>

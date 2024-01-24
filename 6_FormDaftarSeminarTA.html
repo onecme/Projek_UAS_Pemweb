@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Daftar Seminar Tugas Akhir</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css"
+    />
+    <!-- Theme style -->
+    <link
+      rel="stylesheet"
+      href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css"
+    />
+    <style>
+      .italic-text {
+        font-style: italic;
+      }
+
+      fieldset {
+        text-align: center;
+      }
+      .content-wrapper {
+        padding: 20px;
+        margin-left: 0 !important;
+        width: 100vw; /* Set width to 100% of viewport width */
+      }
+      /* Remove unwanted left sidebar */
+      .main-sidebar {
+        display: none !important;
+      }
+
+      /* Adjust navbar to remove unnecessary margin */
+      .main-header {
+        margin-left: 0 !important;
+      }
+    </style>
+    </style>
+  </head>
+
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-dark bg-primary">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+            <table class="nav-item">
+              <tr>
+                <td>
+                  <a href="3_home.html" class="text-light pr-2">Home</a>
+                </td>
+                <td>
+                  <a href="4_jadwal.html" class="text-light pr-2">Jadwal</a>
+                </td>
+                <td>
+                  <a href="6_FormDaftarSeminarTA.html" class="text-light pr-2"
+                    >Seminar</a
+                  >
+                </td>
+                <td>
+                  <a href="#" class="text-light pr-2">Berita</a>
+                </td>
+                <td>
+                  <a href="#" class="text-light pr-2">About</a>
+                </td>
+              </tr>
+            </table>
+          </li>
+        </ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#"> User </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <div class="dropdown-divider"></div>
+              <a href="1_login.html" class="dropdown-item"> Log Out </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <section class="content-wrapper">
+        <div style="text-align: center">
+          <h2 class="pt-3">Sistem Informasi Seminar Tugas Akhir - SISTA</h2>
+        </div>
+        <div class="pl-5 pt-3">
+          <p>
+            Pendaftaran Seminar berlaku untuk mahasiswa yang telah mendapat
+            persetujuan dari Pembimbing TA
+          </p>
+        </div>
+        <fieldset class="card pl-5">
+          <legend
+            style="font-family: cursive; font-weight: bold; font-size: 1.2em"
+          >
+            Form Daftar Seminar Tugas Akhir
+          </legend>
+          <form action="3_home.html" id="form">
+            <div class="form-group row">
+              <label for="nim" class="col-2 col-form-label">NIM</label>
+              <div class="col-2">
+                <input
+                  id="nim"
+                  name="nim"
+                  type="number"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <label for="judul_ta" class="col-2 col-form-label"
+                >Judul TA</label
+              >
+              <div class="col-4">
+                <textarea
+                  id="judul_ta"
+                  name="judul_ta"
+                  cols="40"
+                  rows="5"
+                  class="form-control"
+                  required
+                ></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="nama" class="col-2 col-form-label">Nama</label>
+              <div class="col-2">
+                <input
+                  id="nama"
+                  name="nama"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="prodi" class="col-2 col-form-label"
+                >Program Studi</label
+              >
+              <div class="col-2">
+                <select id="prodi" name="prodi" class="custom-select" required>
+                  <option value="Sistem Informasi">Sistem Informasi</option>
+                  <option value="Teknik Informatika">Teknik Informatika</option>
+                  <option value="Bisnis Digital">Bisnis Digital</option>
+                </select>
+              </div>
+              <label for="seminar" class="col-2 col-form-label">Seminar</label>
+              <div class="col-2">
+                <select
+                  id="seminar"
+                  name="seminar"
+                  class="custom-select"
+                  required
+                >
+                  <option value="Proposal">Proposal</option>
+                  <option value="Skripsi">Skripsi</option>
+                  <option value="Makalah">Makalah</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="tanggal_seminar" class="col-2 col-form-label"
+                >Tanggal Seminar</label
+              >
+              <div class="col-2">
+                <input
+                  id="tanggal_seminar"
+                  name="tanggal_seminar"
+                  type="date"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <label for="pembimbing" class="col-2 col-form-label"
+                >Pembimbing</label
+              >
+              <div class="col-2">
+                <select
+                  id="pembimbing"
+                  name="pembimbing"
+                  class="custom-select"
+                  required
+                >
+                  <option value="Sirojul munir S.SI, M.KOM">
+                    Sirojul munir S.SI, M.KOM
+                  </option>
+                  <option value="Ahmad Rio M.SI">Ahmad Rio M.SI</option>
+                  <option value="Amaliah Rahmah M.T">Amaliah Rahmah M.T</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="jam_seminar" class="col-2 col-form-label"
+                >Jam Seminar</label
+              >
+              <div class="col-2">
+                <input
+                  id="jam_seminar"
+                  name="jam_seminar"
+                  type="time"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <label for="penguji_1" class="col-2 col-form-label"
+                >Penguji 1</label
+              >
+              <div class="col-2">
+                <select
+                  id="penguji_1"
+                  name="penguji_1"
+                  class="custom-select"
+                  required
+                >
+                  <option value="Ahmad Rio M.SI">Ahmad Rio M.SI</option>
+                  <option value="Sirojul munir S.SI, M.KOM">
+                    Sirojul munir S.SI, M.KOM
+                  </option>
+                  <option value="Amaliah Rahmah M.T">Amaliah Rahmah M.T</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="ruangan" class="col-2 col-form-label">Ruangan</label>
+              <div class="col-2">
+                <input
+                  id="ruangan"
+                  name="ruangan"
+                  type="text"
+                  class="form-control"
+                  required
+                />
+              </div>
+              <label for="penguji_2" class="col-2 col-form-label"
+                >Penguji 2</label
+              >
+              <div class="offset-0 col-2">
+                <select
+                  id="penguji_2"
+                  name="penguji_2"
+                  class="custom-select"
+                  required
+                >
+                  <option value="Amaliah Rahmah M.T">Amaliah Rahmah M.T</option>
+                  <option value="Sirojul munir S.SI, M.KOM">
+                    Sirojul munir S.SI, M.KOM
+                  </option>
+                  <option value="Ahmad Rio M.SI">Ahmad Rio M.SI</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="offset-0 col-2">
+                <button
+                  name="daftar"
+                  type="submit"
+                  class="btn btn-primary"
+                  onclick="daftarSeminar()"
+                >
+                  Daftar
+                </button>
+              </div>
+            </div>
+          </form>
+        </fieldset>
+      </section>
+    </div>
+    <script>
+      function daftarSeminar() {
+        var nim = document.getElementById("nim").value;
+        var judul_ta = document.getElementById("judul_ta").value;
+        var nama = document.getElementById("nama").value;
+        var prodi = document.getElementById("prodi").value;
+        var seminar = document.getElementById("seminar").value;
+        var tanggal_seminar = document.getElementById("tanggal_seminar").value;
+        var pembimbing = document.getElementById("pembimbing").value;
+        var jam_seminar = document.getElementById("jam_seminar").value;
+        var penguji_1 = document.getElementById("penguji_1").value;
+        var ruangan = document.getElementById("ruangan").value;
+        var penguji_2 = document.getElementById("penguji_2").value;
+        var form = document.getElementById("form");
+
+        if (nim.length > 8) {
+          alert("NIM tidak valid!Panjang nim maksimal 8");
+        } else if (judul_ta > 100) {
+          alert(
+            "Judul TA tidak valid! Panjang Judul TA peserta maksimal 30 karakter."
+          );
+        } else if (nama.length > 30) {
+          alert("Nama tidak valid! Panjang nama peserta maksimal 30 karakter.");
+        } else if (prodi === "") {
+          alert("Prodi tidak valid!");
+        } else if (seminar === "") {
+          alert("Seminar tidak valid!");
+        } else if (tanggal_seminar === "") {
+          alert("Tanggal seminar tidak valid!");
+        } else if (pembimbing === "") {
+          alert("Pembimbing seminar tidak valid!");
+        } else if (jam_seminar === "") {
+          alert("Jam seminar tidak valid!");
+        } else if (penguji_1 === "") {
+          alert("Penguji 1 tidak valid!");
+        } else if (ruangan > 30) {
+          alert(
+            "Ruangan tidak valid! Panjang ruangan seminar maksimal 30 karakter."
+          );
+        } else if (penguji_2 === "") {
+          alert("Penguji 2 tidak valid!");
+        } else {
+          alert("Success");
+          form.submit();
+        }
+      }
+    </script>
+    <!-- Required Scripts -->
+    <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+    <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+  </body>
+</html>

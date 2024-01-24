@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Kelola Seminar</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css"
+    />
+    <!-- Theme style -->
+    <link
+      rel="stylesheet"
+      href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css"
+    />
+  </head>
+
+  <body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+      <!-- Navbar -->
+      <nav class="main-header navbar navbar-expand navbar-dark bg-primary">
+        <!-- Left navbar links -->
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" data-widget="pushmenu" href="#" role="button"
+              ><i class="fas fa-bars"></i
+            ></a>
+          </li>
+        </ul>
+        <ul class="navbar-nav"></ul>
+
+        <!-- Right navbar links -->
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item dropdown">
+            <a class="nav-link" data-toggle="dropdown" href="#"> Admin </a>
+            <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+              <div class="dropdown-divider"></div>
+              <a href="1_login.html" class="dropdown-item"> Log Out </a>
+            </div>
+          </li>
+        </ul>
+      </nav>
+      <!-- /.navbar -->
+
+      <!-- Main Sidebar Container -->
+      <aside class="main-sidebar sidebar-dark-primary elevation-4">
+        <!-- Brand Logo -->
+        <a href="#" class="brand-link">
+          <img
+            src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png"
+            alt="AdminLTE Logo"
+            class="brand-image img-circle elevation-3"
+            style="opacity: 0.8"
+          />
+          <span class="brand-text font-weight-light">SISTA NF</span>
+        </a>
+
+        <!-- Sidebar -->
+        <div class="sidebar">
+          <!-- Sidebar user panel (optional) -->
+          <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+            <div class="image">
+              <img
+                src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg"
+                class="img-circle elevation-2"
+                alt="User Image"
+              />
+            </div>
+            <div class="info">
+              <a href="#" class="d-block">Admin</a>
+            </div>
+          </div>
+
+          <!-- SidebarSearch Form -->
+          <div class="form-inline">
+            <div class="input-group" data-widget="sidebar-search">
+              <input
+                class="form-control form-control-sidebar"
+                type="search"
+                placeholder="Search"
+                aria-label="Search"
+              />
+              <div class="input-group-append">
+                <button class="btn btn-sidebar">
+                  <i class="fas fa-search fa-fw"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <nav class="mt-2">
+            <ul
+              class="nav nav-pills nav-sidebar flex-column"
+              data-widget="treeview"
+              role="menu"
+              data-accordion="false"
+            >
+              <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+              <li class="nav-item menu-open">
+                <a href="#" class="nav-link active">
+                  <i class="nav-icon fas fa-tachometer-alt"></i>
+                  <p>
+                    Dashboard
+                    <i class="right fas fa-angle-left"></i>
+                  </p>
+                </a>
+                <ul class="nav nav-treeview">
+                  <li class="nav-item">
+                    <a href="#" class="nav-link active">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Seminar TA</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Mahasiswa</p>
+                    </a>
+                  </li>
+                  <li class="nav-item">
+                    <a href="#" class="nav-link">
+                      <i class="far fa-circle nav-icon"></i>
+                      <p>Dosen</p>
+                    </a>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </aside>
+
+      <!-- Content Wrapper. Contains page content -->
+      <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <div class="content-header">
+          <div class="container-fluid">
+            <div class="row mb-2">
+              <div class="col-sm-12">
+                <h6 class="m-0 text-right">
+                  <a href="6_FormDaftarSeminarTA.html">Seminar</a> &nbsp;>&nbsp;
+                  Kelola Seminar
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Main content -->
+        <section class="content">
+          <!-- Your page content goes here -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="card">
+                  <div class="card-header">
+                    <h3 class="">Kelola Seminar Mahasiswa</h3>
+                  </div>
+                  <div class="card-body">
+                    <button
+                      class="btn btn-primary mb-3"
+                      data-toggle="modal"
+                      data-target="#addBookingModal"
+                    >
+                      Tambah Seminar Baru
+                    </button>
+                    <a
+                      href="8_FormSeminrTA.html"
+                      class="btn btn-primary mb-3 ml-3"
+                      >Update Seminar</a
+                    >
+                    <table class="table">
+                      <thead>
+                        <tr>
+                          <th>No.</th>
+                          <th>NIM</th>
+                          <th>Nama Mahasiswa</th>
+                          <th>Seminar</th>
+                          <th>Waktu</th>
+                          <th>Ruangan</th>
+                          <th>Peserta</th>
+                          <th>Action</th>
+                        </tr>
+                      </thead>
+                      <tbody id="seminarList">
+                        <!-- Data seminar akan ditampilkan di sini -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- /.content -->
+      </div>
+      <!-- /.content-wrapper -->
+
+      <!-- Formulir Modal untuk Tambah Seminar -->
+      <div
+        class="modal fade"
+        id="addBookingModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <div class="container mt-4">
+                <div class="row">
+                  <div class="col-md-6">
+                    <form id="addSeminarForm">
+                      <h4 class="mb-3">Informasi Peserta Seminar</h4>
+                      <div class="form-group">
+                        <label for="addNim">NIM:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addNim"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addNama">Nama:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addNama"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addProdi">Prodi:</label>
+                        <select class="form-control" id="addProdi" required>
+                          <option value="Teknik Informatika">
+                            Teknik Informatika
+                          </option>
+                          <option value="Sistem Informasi">
+                            Sistem Informasi
+                          </option>
+                          <option value="Bisnis Digital">Bisnis Digital</option>
+                        </select>
+                      </div>
+                      <div class="form-group">
+                        <label for="addTanggal">Tanggal Seminar:</label>
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="addTanggal"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addJam">Jam Seminar:</label>
+                        <input
+                          type="time"
+                          class="form-control"
+                          id="addJam"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addRuangan">Ruangan:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addRuangan"
+                          required
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="col-md-6">
+                    <form id="addDetailSeminarForm">
+                      <h4 class="mb-3">Detail Seminar</h4>
+                      <div class="form-group">
+                        <label for="addJudulTA">Judul TA:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addJudulTA"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addSeminar">Seminar:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addSeminar"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addPembimbing">Pembimbing:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addPembimbing"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addPenguji1">Penguji 1:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addPenguji1"
+                          required
+                        />
+                      </div>
+                      <div class="form-group">
+                        <label for="addPenguji2">Penguji 2:</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="addPenguji2"
+                          required
+                        />
+                      </div>
+                      <div class="form-group mt-4">
+                        <button
+                          type="submit"
+                          class="btn btn-primary"
+                          onclick="addSeminar()"
+                        >
+                          Tambah Data
+                        </button>
+                        <button
+                          type="reset"
+                          class="btn btn-secondary ml-2"
+                          data-dismiss="modal"
+                        >
+                          Delete
+                        </button>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Formulir Modal untuk Edit Seminar -->
+      <div
+        class="modal fade"
+        id="editSeminarModal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <!-- Formulir untuk mengedit seminar -->
+              <form id="editSeminarForm">
+                <div class="form-group">
+                  <label for="editNim">NIM:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editNim"
+                    required
+                    readonly
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="editNama">Nama Mahasiswa/i:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editNama"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="editProdi">Seminar:</label>
+                  <select class="form-control" id="editProdi" required>
+                    <option value="Proposal">Proposal</option>
+                    <option value="Seminar Akhir">Seminar Akhir</option>
+                    <option value="Seminar Hasil">Seminar Hasil</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="editTanggal">Tanggal Seminar:</label>
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="editTanggal"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="editJam">Jam Seminar:</label>
+                  <input
+                    type="time"
+                    class="form-control"
+                    id="editJam"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="editRuangan">Ruangan:</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editRuangan"
+                    required
+                  />
+                </div>
+                <div class="form-group">
+                  <button
+                    type="submit"
+                    class="btn btn-primary"
+                    onclick="updateSeminar()"
+                  >
+                    Simpan Perubahan
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Your custom JavaScript for handling seminar data -->
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var seminars = [
+          {
+            nim: "0102001",
+            nama: "Diego Armando",
+            prodi: "Proposal",
+            waktu: "2024-01-15",
+            jam: "10:00",
+            ruangan: "Online",
+            peserta: "2",
+            url: "9_view1.html",
+          },
+          {
+            nim: "0102002",
+            nama: "Ahmad Budiman",
+            prodi: "Seminar Akhir",
+            waktu: "2024-01-16",
+            jam: "10:45",
+            ruangan: "B102",
+            peserta: "3",
+            url: "9_view2.html",
+          },
+          {
+            nim: "0102021",
+            nama: "Fredelia Putri",
+            prodi: "Seminar Hasil",
+            waktu: "2024-01-16",
+            jam: "15:30",
+            ruangan: "B102",
+            peserta: "3",
+            url: "9_view3.html",
+          },
+          // Add more seminars as needed
+        ];
+
+        function displaySeminars() {
+          var seminarList = document.getElementById("seminarList");
+          seminarList.innerHTML = "";
+
+          seminars.forEach(function (seminar, index) {
+            var row = seminarList.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            var cell6 = row.insertCell(5);
+            var cell7 = row.insertCell(6);
+            var cell8 = row.insertCell(7);
+
+            cell1.innerHTML = index + 1;
+            cell2.innerHTML = seminar.nim;
+            cell3.innerHTML = seminar.nama;
+            cell4.innerHTML = seminar.prodi;
+
+            var formattedWaktu = seminar.jam + " " + seminar.waktu;
+            cell5.innerHTML = formattedWaktu;
+
+            cell6.innerHTML = seminar.ruangan;
+            cell7.innerHTML =
+              seminar.peserta + ' <a href="' + seminar.url + '">View</a>';
+
+            var viewLink = document.createElement("a");
+            viewLink.href = seminar.url;
+            viewLink.innerHTML = " (View)";
+            cell7.innerHTML = seminar.peserta + viewLink.outerHTML;
+
+            var editButton = document.createElement("button");
+            editButton.innerHTML = "Edit";
+            editButton.className = "btn btn-warning btn-sm";
+            editButton.onclick = function () {
+              openEditModal(index);
+            };
+
+            var deleteButton = document.createElement("button");
+            deleteButton.innerHTML = "Delete";
+            deleteButton.className = "btn btn-danger btn-sm";
+            deleteButton.onclick = function () {
+              deleteSeminar(index);
+            };
+
+            cell8.appendChild(editButton);
+            cell8.appendChild(deleteButton);
+          });
+        }
+
+        function openEditModal(index) {
+          var seminar = seminars[index];
+
+          // Isi nilai formulir modal dengan data seminar
+          document.getElementById("editNim").value = seminar.nim;
+          document.getElementById("editNama").value = seminar.nama;
+          document.getElementById("editProdi").value = seminar.prodi;
+          document.getElementById("editTanggal").value = seminar.waktu;
+          document.getElementById("editJam").value = seminar.jam;
+          document.getElementById("editRuangan").value = seminar.ruangan;
+
+          // Tampilkan modal
+          $("#editSeminarModal").modal("show");
+
+          // Fungsi untuk menangani pengiriman formulir edit
+          document.getElementById("editSeminarForm").onsubmit = function (
+            event
+          ) {
+            event.preventDefault();
+
+            // Perbarui data seminar
+            seminars[index] = {
+              nim: document.getElementById("editNim").value,
+              nama: document.getElementById("editNama").value,
+              prodi: document.getElementById("editProdi").value,
+              waktu: document.getElementById("editTanggal").value,
+              jam: document.getElementById("editJam").value,
+              ruangan: document.getElementById("editRuangan").value,
+              peserta: seminar.peserta,
+              url: seminar.url,
+            };
+
+            // Tutup modal
+            $("#editSeminarModal").modal("hide");
+
+            // Tampilkan kembali daftar seminar
+            displaySeminars();
+          };
+        }
+
+        function deleteSeminar(index) {
+          // Konfirmasi penghapusan
+          var confirmation = confirm(
+            "Apakah Anda yakin ingin menghapus seminar ini?"
+          );
+
+          if (confirmation) {
+            // Hapus seminar dari array
+            seminars.splice(index, 1);
+
+            // Tampilkan kembali daftar seminar
+            displaySeminars();
+          }
+        }
+
+        function addSeminar() {
+          // Ambil nilai dari formulir
+          var nim = document.getElementById("addNim").value;
+          var nama = document.getElementById("addNama").value;
+          var prodi = document.getElementById("addProdi").value;
+          var waktu = document.getElementById("addTanggal").value;
+          var jam = document.getElementById("addJam").value;
+          var ruangan = document.getElementById("addRuangan").value;
+
+          // Peserta awal diatur ke 3 (misalnya)
+          var peserta = 3;
+
+          // Tambahkan seminar baru
+          var newSeminar = {
+            nim: nim,
+            nama: nama,
+            prodi: prodi,
+            waktu: waktu,
+            jam: jam,
+            ruangan: ruangan,
+            peserta: peserta,
+          };
+
+          seminars.push(newSeminar);
+
+          // Tutup modal
+          $("#addBookingModal").modal("hide");
+
+          // Tampilkan kembali daftar seminar
+          displaySeminars();
+        }
+
+        // Tampilkan daftar seminar pertama kali
+        displaySeminars();
+      });
+    </script>
+
+    <!-- Required Scripts -->
+    <script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+    <script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+  </body>
+</html>

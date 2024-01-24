@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Kelola Seminar</title>
+
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/plugins/fontawesome-free/css/all.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="https://adminlte.io/themes/v3/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <!-- Navbar -->
+          <nav class="main-header navbar navbar-expand navbar-dark bg-primary">
+            <!-- Left navbar links -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+
+            <!-- Right navbar links -->
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link" data-toggle="dropdown" href="#">
+                        Admin
+                    </a>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
+                        <div class="dropdown-divider"></div>
+                        <a href="login.html" class="dropdown-item">
+                            Log Out
+                        </a>
+                    </div>
+                </li>
+            </ul>
+          </nav>
+          <!-- /.navbar -->
+
+        <!-- Main Sidebar Container -->
+        <aside class="main-sidebar sidebar-dark-primary elevation-4">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-link">
+                <img src="https://adminlte.io/themes/v3/dist/img/AdminLTELogo.png" alt="AdminLTE Logo" class="brand-image img-circle elevation-3" style="opacity: 0.8"/>
+                <span class="brand-text font-weight-light">SISTA NF</span>
+            </a>
+
+            <!-- Sidebar -->
+            <div class="sidebar">
+                <!-- Sidebar user panel (optional) -->
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="https://adminlte.io/themes/v3/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image"/>
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">Admin</a>
+                    </div>
+                </div>
+
+                <!-- SidebarSearch Form -->
+                <div class="form-inline">
+                    <div class="input-group" data-widget="sidebar-search">
+                        <input class="form-control form-control-sidebar" type="search" placeholder="Search" aria-label="Search"/>
+                        <div class="input-group-append">
+                            <button class="btn btn-sidebar">
+                                <i class="fas fa-search fa-fw"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <!-- Add icons to the links using the .nav-icon class with font-awesome or any other icon font library -->
+                        <li class="nav-item menu-open">
+                            <a href="#" class="nav-link active">
+                                <i class="nav-icon fas fa-tachometer-alt"></i>
+                                <p>
+                                    Dashboard
+                                    <i class="right fas fa-angle-left"></i>
+                                </p>
+                            </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="7_kelola-seminar.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Seminar TA</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link active">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Mahasiswa</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="#" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Dosen</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container-fluid">
+          <div class="row mb-2">
+            <div class="col-sm-12">
+              <h6 class="m-0 text-right"><a href="6_FormDaftarSeminarTA.html">Seminar</a> &nbsp;>&nbsp;
+                <a href="7_kelola-seminar.html">Kelola Seminar</a> &nbsp;>&nbsp;<a href="8_FormSeminrTA.html">Form
+                  Seminar</a>
+                &nbsp;>&nbsp;Peserta Seminar
+              </h6>
+            </div>
+          </div>
+        </div>
+      </div>
+
+  <!-- Main content -->
+  <section class="content">
+    <!-- Your page content goes here -->
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="card">
+            <div class="card-header">
+              <h3 class="card-title">Seminar Mahasiswa : Diego Armanda (0102001) - Teknik Informatika<br>Judul : Rancang Bangun Aplikasi Seminar Tugas Akhir Menggunakan MVC Frame Work<br>Waktu Seminar : Senin, 4 Januari 2024, Jam 10:00</h3>
+            </div>
+            <div><br></div>
+            <div class="text-center">
+              <h4 class="m-0">Daftar Peserta Seminar</h4>
+            </div>
+            <div class="card-body">
+              <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addBookingModal">Tambah Peserta Seminar</button>
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th>No.</th>
+                    <th>NIM</th>
+                    <th>Mahasiswa/i</th>
+                    <th>Prodi</th>
+                    <th>Waktu</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody id="bookingList">
+                  <!-- Data booking akan ditampilkan di sini -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->
+
+<!-- Formulir Modal untuk Tambah Booking -->
+<div class="modal fade" id="addBookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Tambah Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulir untuk menambah booking -->
+        <form id="addBookingForm">
+          <div class="form-group">
+            <label for="addNim">NIM:</label>
+            <input type="text" class="form-control" id="addNim" required>
+          </div>
+          <div class="form-group">
+            <label for="addName">Nama Mahasiswa/i:</label>
+            <input type="text" class="form-control" id="addName" required>
+          </div>
+          <div class="form-group">
+            <label for="addProdi">Prodi:</label>
+            <select class="form-control" id="addProdi" required>
+              <option value="Teknik Informatika">Teknik Informatika</option>
+              <option value="Sistem Informatika">Sistem Informasi</option>
+              <option value="Bisnis Digital">Bisnis Digital</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="addWaktu">Waktu:</label>
+            <input type="date" class="form-control" id="addWaktu" required>
+          </div>
+          <div class="form-group">
+            <label for="addStatus">Status:</label>
+            <select class="form-control" id="addStatus" required>
+              <option value="Diterima">Diterima</option>
+              <option value="Ditolak">Ditolak</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Tambah Data</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Formulir Modal untuk Edit Booking -->
+<div class="modal fade" id="editBookingModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Edit Data</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Formulir untuk mengedit booking -->
+        <form id="editBookingForm">
+          <div class="form-group">
+            <label for="editNim">NIM:</label>
+            <input type="text" class="form-control" id="editNim" required readonly>
+          </div>
+          <div class="form-group">
+            <label for="editName">Nama Mahasiswa/i:</label>
+            <input type="text" class="form-control" id="editName" required>
+          </div>
+          <div class="form-group">
+            <label for="editProdi">Prodi:</label>
+            <select class="form-control" id="editProdi" required>
+              <option value="Teknik Informatika">Teknik Informatika</option>
+              <option value="Sistem Informatika">Sistem Informasi</option>
+              <option value="Bisnis Digital">Bisnis Digital</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="editWaktu">Waktu:</label>
+            <input type="date" class="form-control" id="editWaktu" required>
+          </div>
+          <div class="form-group">
+            <label for="editStatus">Status:</label>
+            <select class="form-control" id="editStatus" required>
+              <option value="Diterima">Diterima</option>
+              <option value="Ditolak">Ditolak</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">Simpan Perubahan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Your custom JavaScript for handling booking data -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    // Contoh data booking
+    var bookings = [
+      { nim: "0110223276", name: "Thooriq", prodi: "Teknik Informatika", waktu: "2024-01-15", status: "Diterima" },
+      { nim: "0110223200", name: "Elyas", prodi: "Teknik Informatika", waktu: "2024-01-16", status: "Diterima" },
+      // Tambahkan booking sesuai logika aplikasi Anda
+    ];
+
+    // Fungsi untuk menampilkan data booking
+    function displayBookings() {
+      var bookingList = document.getElementById("bookingList");
+      bookingList.innerHTML = "";
+
+      bookings.forEach(function (booking, index) {
+        var row = bookingList.insertRow();
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+
+        cell1.innerHTML = index + 1;
+        cell2.innerHTML = booking.nim;
+        cell3.innerHTML = booking.name;
+        cell4.innerHTML = booking.prodi;
+        cell5.innerHTML = booking.waktu;
+        cell6.innerHTML = booking.status;
+
+        // Tambahkan tombol Edit dan Delete
+        var editButton = document.createElement("button");
+        editButton.innerHTML = "Edit";
+        editButton.className = "btn btn-warning btn-sm";
+        editButton.onclick = function () {
+          openEditModal(index);
+        };
+
+        var deleteButton = document.createElement("button");
+        deleteButton.innerHTML = "Delete";
+        deleteButton.className = "btn btn-danger btn-sm";
+        deleteButton.onclick = function () {
+          deleteBooking(index);
+        };
+
+        cell7.appendChild(editButton);
+        cell7.appendChild(deleteButton);
+      });
+    }
+
+     // Fungsi untuk membuka modal edit
+     function openEditModal(index) {
+      var booking = bookings[index];
+
+      // Isi nilai formulir modal dengan data booking
+      document.getElementById("editNim").value = booking.nim;
+      document.getElementById("editName").value = booking.name;
+      document.getElementById("editProdi").value = booking.prodi;
+      document.getElementById("editWaktu").value = booking.waktu;
+      document.getElementById("editStatus").value = booking.status;
+
+      // Tampilkan modal
+      $("#editBookingModal").modal("show");
+
+      // Fungsi untuk menangani pengiriman formulir edit
+      document.getElementById("editBookingForm").onsubmit = function (event) {
+        event.preventDefault();
+
+        // Perbarui data booking
+        bookings[index] = {
+          nim: document.getElementById("editNim").value,
+          name: document.getElementById("editName").value,
+          prodi: document.getElementById("editProdi").value,
+          waktu: document.getElementById("editWaktu").value,
+          status: document.getElementById("editStatus").value,
+        };
+
+        // Tutup modal
+        $("#editBookingModal").modal("hide");
+
+        // Tampilkan kembali daftar booking
+        displayBookings();
+      };
+    }
+
+    // Fungsi untuk menghapus booking
+    function deleteBooking(index) {
+      // Konfirmasi penghapusan
+      var confirmation = confirm("Apakah Anda yakin ingin menghapus booking ini?");
+
+      if (confirmation) {
+        // Hapus booking dari array
+        bookings.splice(index, 1);
+
+        // Tampilkan kembali daftar booking
+        displayBookings();
+      }
+    }
+
+    // Fungsi untuk menambah booking baru
+    function addBooking(nim, name, prodi, waktu, status) {
+      bookings.push({ nim: nim, name: name, prodi: prodi, waktu: waktu, status: status });
+
+      // Tampilkan kembali daftar booking
+      displayBookings();
+    }
+
+    // Fungsi untuk menangani pengiriman formulir tambah booking
+    document.getElementById("addBookingForm").onsubmit = function (event) {
+      event.preventDefault();
+
+      // Ambil nilai dari formulir
+      var nim = document.getElementById("addNim").value;
+      var name = document.getElementById("addName").value;
+      var prodi = document.getElementById("addProdi").value;
+      var waktu = document.getElementById("addWaktu").value;
+      var status = document.getElementById("addStatus").value;
+
+      // Tambahkan booking baru
+      addBooking(nim, name, prodi, waktu, status);
+
+      // Tutup modal
+      $("#addBookingModal").modal("hide");
+    };
+
+    // Tampilkan daftar booking pertama kali
+    displayBookings();
+  });
+</script>
+
+
+<!-- Required Scripts -->
+<script src="https://adminlte.io/themes/v3/plugins/jquery/jquery.min.js"></script>
+<script src="https://adminlte.io/themes/v3/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="https://adminlte.io/themes/v3/dist/js/adminlte.min.js"></script>
+</body>
+</html>
